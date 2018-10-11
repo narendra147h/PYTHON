@@ -5,13 +5,14 @@ from flask import Flask, request, g
 from api._req_notifications_ import query_notiication_list, store_notification
 from api._req_user_ import user, store_user, update_token
 from utils.uitils import onsuccess_response, onerror_response
+from flaskr.db import get_db
 
 app = Flask(__name__)
 
 
 @app.before_request
 def before_request():
-    g.db = sqlite3.connect('NOTIFICATIONS.db', timeout=10)
+    g.db = get_db()
 
 
 # Notification request

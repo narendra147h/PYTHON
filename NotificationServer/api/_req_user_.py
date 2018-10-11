@@ -25,8 +25,8 @@ def user():
 def store_user():
     print(request)
     print(request.content_type)
-    if request.content_type != JSON_MIME_TYPE:
-        return onerror_response('Invalid Content Type')
+    # if request.content_type != JSON_MIME_TYPE:
+    #     return onerror_response('Invalid Content Type')
 
     data = request.json
     if not all([data.get('name')]):
@@ -61,8 +61,8 @@ def user_details_resp():
 
 # update fcm token
 def update_token(user_id):
-    if request.content_type != JSON_MIME_TYPE:
-        return onerror_response('Invalid Content Type')
+    # if request.content_type != JSON_MIME_TYPE:
+    #     return onerror_response('Invalid Content Type')
 
     data = request.json
     if not all([data.get('fcm_token')]):
